@@ -4,25 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>godot.xcscheme</key>
+		<key>godot_ios.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>godot_index.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>50B5576E1EE3DD6C002C2737</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>50FC1B1D1EE3139100B228F4</key>
+		<key>D0BCFE3318AEBDA2004A7AAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
