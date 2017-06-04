@@ -1686,14 +1686,31 @@ Collada::Node *Collada::_parse_visual_scene_node(XMLParser &parser) {
 				//usually what defines the type of node
 				//print_line(" dont know what to do with "+section);
 				if (section.begins_with("instance_")) {
-
+#if 0
 					if (!node) {
-
 						node = _parse_visual_node_instance_data(parser);
-
 					} else {
 						ERR_PRINT("Multiple instance_* not supported.");
 					}
+#else
+					Node *mnode;
+					if (!node) {
+						node = memnew(Node);
+					}
+					String mid = parser.get_attribute_value_safe("url");
+					mnode = _parse_visual_node_instance_data(parser);
+					mnode->noname = !found_name;
+					//mnode->xform_list = xform_list;
+
+					mnode->name = mid;
+					mnode->id = mid;
+					mnode->empty_draw_type = empty_draw_type;
+
+					mnode->default_transform = mnode->compute_transform(*this);
+					state.scene_map[id] = mnode;
+
+					children.push_back(mnode);
+#endif
 				}
 
 			} else if (section == "node") {
